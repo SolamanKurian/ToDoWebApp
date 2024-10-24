@@ -5,7 +5,9 @@ require ("dotenv").config()
 const connectDB=require('./config/db')
 const corsOptions={
     origin : process.env.FRONTEND_URL,
-    credentials:true
+    credentials:true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }
 
 const app=express()
